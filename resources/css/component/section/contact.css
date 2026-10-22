@@ -1,0 +1,11 @@
+.contact-container{
+    @apply w-full col-span-2 md:col-span-1;
+}
+
+.contact-container label{
+    @apply text-small;
+}
+
+.contact-input{
+    @apply px-5 py-3 border-none bg-grey/20 rounded-sm w-full;
+}

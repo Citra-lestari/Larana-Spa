@@ -1,0 +1,43 @@
+.about-hero{
+    @apply relative isolate left-1/2 flex min-h-104 w-screen -translate-x-1/2 items-end overflow-hidden px-112 py-8 md:min-h-112 md:px-[7.5vw] md:py-12;
+}
+
+.about-hero-image{
+    @apply absolute inset-0 -z-20 h-full w-full object-cover object-center;
+}
+
+.about-hero-overlay{
+    @apply absolute inset-0 -z-10 bg-black/60;
+}
+
+.about-hero-content{
+    @apply mx-auto md:w-[85%] 2xl:max-w-350 flex w-full flex-col gap-5 text-white md:flex-row md:items-end md:justify-between md:gap-10;
+}
+
+.about-hero-title{
+    @apply text-display font-semibold;
+}
+
+.about-hero-description{
+    @apply max-w-md text-body leading-relaxed text-white/80;
+}
+
+.about-detail{
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center;
+}
+
+.about-img{
+    @apply col-span-1 w-full h-64 sm:h-80 md:h-89.5 object-cover rounded-sm;
+}
+
+.about-badges{
+    @apply font-medium italic text-primary mb-2;
+}
+
+.title-about{
+    @apply text-title font-semibold;
+}
+
+.title-story{
+    @apply text-title md:text-h1 font-semibold mb-2;
+}

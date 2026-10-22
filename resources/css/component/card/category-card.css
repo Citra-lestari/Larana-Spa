@@ -1,0 +1,15 @@
+.category-card{
+    @apply relative h-75 md:h-100.75 cursor-pointer;
+}
+
+.category-image{
+    @apply h-full w-full object-cover rounded-md;
+}
+
+.category-overlay{
+    @apply absolute bg-black/50 inset-0;
+}
+
+.category-name{
+    @apply absolute inset-0 z-10 flex items-center justify-center text-white text-xl font-bold;
+}

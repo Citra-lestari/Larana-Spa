@@ -1,0 +1,31 @@
+.blog-card{
+    @apply w-full h-full  border border-black/20 hover:border-primary rounded-lg cursor-pointer transition-colors duration-300;
+}
+
+.blog-img{
+    @apply w-full h-35 lg:h-60 rounded-t-[7px] mb-2 object-cover;
+}
+
+.blog-content{
+    @apply px-3 pt-2 pb-4;
+}
+
+.blog-title{
+    @apply text-title-body font-medium text-black group-hover:text-primary line-clamp-2 transition-colors duration-300;
+}
+
+.blog-desc{
+    @apply text-label text-black/80 line-clamp-2 mt-1;
+}
+
+.date-icon{
+    @apply text-body text-black/50;
+}
+
+.cancel-icon{
+    @apply text-body text-black cursor-pointer;
+}
+
+.blog-date{
+    @apply text-small text-black/60;
+}

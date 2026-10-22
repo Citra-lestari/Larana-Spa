@@ -1,0 +1,24 @@
+.cta-section{
+    @apply relative w-full h-100.75 rounded-lg mb-30;
+}
+
+.cta-img{
+    @apply w-full h-full object-cover rounded-lg;
+}
+
+.cta-overlay{
+    @apply absolute inset-0 bg-black/80;
+}
+
+.cta-content{
+    @apply flex flex-col items-center justify-center w-[90%] lg:w-[60%] absolute inset-0 z-10 text-center mx-auto;
+}
+
+.cta-title{
+    @apply text-card-title md:text-section text-white font-medium mb-2;
+}
+
+.cta-desc{
+    @apply text-label md:text-body text-white/80 mb-3 line-clamp-2;
+}
+

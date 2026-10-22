@@ -1,0 +1,7 @@
+.filter-search{
+    @apply flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 my-8;
+}
+
+.filter{
+    @apply flex flex-wrap gap-2;
+}

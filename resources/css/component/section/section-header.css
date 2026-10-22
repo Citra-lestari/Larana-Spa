@@ -1,0 +1,25 @@
+.title-desc{
+    @apply flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8;
+}
+
+.title{
+    @apply text-card-title md:text-section font-medium text-black w-full md:w-[45%] line-clamp-none md:line-clamp-2;
+}
+
+.desc{
+    @apply text-body text-black/80 w-full md:w-[45%] line-clamp-none md:line-clamp-2;
+}
+
+
+/* untuk detail page yg title descnya di tengah tengah */
+.title-desc-detail{
+    @apply flex flex-col md:items-center justify-center mx-auto w-full md:w-[75%] my-12 md:my-20 lg:my-30;
+}
+
+.title-detail{
+    @apply text-card-title md:text-section font-medium text-black w-full md:text-center;
+}
+
+.desc-detail{
+    @apply text-body text-black/80 w-full md:text-center;
+}

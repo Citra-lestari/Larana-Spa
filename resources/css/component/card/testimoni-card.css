@@ -1,0 +1,23 @@
+.testimoni-card{
+    @apply rounded-[10px] border border-grey hover:border-primary px-5 py-6;
+}
+
+.testimoni-desc{
+    @apply text-body line-clamp-3 mb-6;
+}
+
+.testimoni-identity{
+    @apply flex gap-1;
+}
+
+.testimoni-img{
+    @apply h-11 w-11 rounded-full object-cover;
+}
+
+.testimoni-name{
+    @apply text-small font-medium;
+}
+
+.testimonial-date{
+    @apply text-metadata text-black/50;
+}

@@ -1,0 +1,31 @@
+.package-card{
+    @apply  py-14 px-5 bg-grey/20 hover:bg-primary rounded-xl transition-colors duration-300;
+}
+
+.package-title{
+    @apply text-title-body font-medium mb-4 text-black group-hover:text-white transition-colors duration-300;
+}
+
+.package-price{
+    @apply text-section font-bold text-black group-hover:text-white transition-colors duration-300;
+}
+
+.package-badges{
+    @apply text-body text-black group-hover:text-white transition-colors duration-300;
+}
+
+.package-desc{
+    @apply text-body text-black/70 group-hover:text-white/80 mt-1 transition-colors duration-300;
+}
+
+.package-line{
+    @apply h-0.5 bg-black/10 group-hover:bg-white/30 w-full transition-colors duration-300;
+}
+
+.package-button{
+    @apply my-4 w-full group-hover:border-transparent group-hover:bg-white group-hover:text-black group-hover:hover:bg-white/80;
+}
+
+.package-benefit{
+    @apply flex items-center gap-2 text-body text-black group-hover:text-white transition-colors duration-300;
+}

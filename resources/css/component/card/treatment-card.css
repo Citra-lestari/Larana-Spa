@@ -1,0 +1,23 @@
+.treatment-card{
+    @apply w-full h-full bg-grey/10 hover:bg-primary/10 border border-grey hover:border-primary rounded-lg cursor-pointer transition-colors duration-300;
+}
+
+.treatment-img{
+    @apply w-full h-35 lg:h-60 rounded-t-[7px] mb-2 object-cover;
+}
+
+.treatment-content{
+    @apply px-3 py-2 md:py-4;
+}
+
+.treatment-title{
+    @apply text-title-body font-medium text-black group-hover:text-primary line-clamp-1 transition-colors duration-300;
+}
+
+.treatment-desc{
+    @apply text-label text-black/70 line-clamp-2;
+}
+
+.treatment-price{
+    @apply text-body font-medium text-primary mt-3;
+}

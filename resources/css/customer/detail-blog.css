@@ -1,0 +1,22 @@
+.title-blog{
+    @apply text-section font-semibold mb-5;
+}
+
+.desc-blog{
+    @apply text-body text-black/80;
+}
+
+.img-blog{
+    @apply w-full h-64 sm:h-80 lg:h-125 rounded-sm my-10 md:my-20 object-cover;
+}
+
+.point-blog{
+    @apply flex flex-col gap-8 md:gap-10 lg:gap-14;
+}
+.sub-point{
+    @apply flex flex-col gap-4;
+}
+
+.sub-point-title{
+    @apply text-card-title font-semibold;
+}

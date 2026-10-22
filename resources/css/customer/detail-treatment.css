@@ -1,0 +1,63 @@
+.detail-treatment-hero{
+    @apply grid grid-cols-1 lg:grid-cols-5 gap-5 mb-15 md:mb-20 lg:mb-30;
+}
+
+.detail-treatment-hero-img{
+    @apply grid gap-4 lg:col-span-3 lg:gap-5;
+}
+
+.img-big{
+    @apply w-full h-64 sm:h-80 lg:h-91 object-cover rounded-sm;
+}
+
+.detail-treatment-hero-img-small{
+    @apply grid grid-cols-3 gap-3 sm:gap-4 lg:gap-5;
+}
+
+.img-small{
+    @apply w-full h-24 sm:h-32 lg:h-39.25 object-cover rounded-sm;
+}
+
+.detail-treatment-content{
+    @apply bg-primary/5 rounded-2xl px-5 py-6 sm:px-6 sm:py-8 lg:col-span-2;
+}
+
+.badges-category{
+    @apply text-body font-medium italic text-primary;
+}
+
+.treatment-name{
+    @apply -mt-1 text-3xl md:text-section font-bold;
+}
+
+.detail-treatment-desc{
+    @apply text-body text-black/70 mt-2;
+}
+
+.duration-price{
+    @apply bg-primary/10 border border-primary px-5 py-5 rounded-lg;
+}
+
+.badges-content{
+    @apply text-body text-primary;
+}
+
+.title-content{
+    @apply mt-1 text-card-title font-semibold;
+}
+
+.detail-treatment-detail{
+    @apply grid grid-cols-1 md:grid-cols-2 gap-5 mb-15 md:mb-20 lg:mb-30;
+}
+
+.detail-treatment-detail-card{
+    @apply rounded-sm bg-primary/10 px-5 py-5;
+}
+
+.title-detail-treatment{
+    @apply text-title text-primary
+}
+
+.desc-detail-treatment{
+    @apply mt-4 text-body text-black/70;
+}

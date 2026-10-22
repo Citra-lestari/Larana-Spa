@@ -1,0 +1,15 @@
+.why-choose-us-card{
+    @apply text-center px-4 py-5;
+}
+
+.order-why-choose-us{
+    @apply text-black group-hover:text-primary text-display font-semibold text-center -mb-1;
+}
+
+.title-why-choose-us{
+    @apply text-black text-title-body font-semibold text-center mb-2 line-clamp-1;
+}
+
+.desc-why-choose-us{
+    @apply text-black/50 text-body text-center line-clamp-2;
+}

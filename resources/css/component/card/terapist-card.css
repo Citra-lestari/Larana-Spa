@@ -1,0 +1,23 @@
+.terapist-card{
+    @apply relative aspect-4/5 overflow-hidden rounded-sm cursor-pointer;
+}
+
+.terapist-img{
+    @apply absolute inset-0 h-full w-full object-cover;
+}
+
+.overlay-1{
+    @apply absolute inset-0 bg-black/50 transition-colors duration-500 group-hover:bg-black/80;
+}
+
+.terapist-content{
+    @apply absolute inset-0 flex flex-col justify-end items-start p-3 md:p-4 text-white transition-all duration-500 group-hover:justify-center group-hover:items-center group-hover:text-center;
+}
+
+.terapist-name{
+    @apply text-body md:text-title-body;
+}
+
+.terapist-specialist{
+    @apply text-metadata md:text-label font-light text-white/80;
+}
