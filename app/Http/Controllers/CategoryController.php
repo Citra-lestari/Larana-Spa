@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -12,7 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(10);
+        $categories = Category::latest()
+            ->paginate(10);
         return view('admin.master-data.category.index', compact('categories'));
     }
 
@@ -29,17 +31,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $category = Category::create([
-            'name' => $request->name,
-            'image' => $request->image,
-        ]);
+        $validatedData['image'] = $request->file('image')
+            ->store('categories', 'public');
 
-        return redirect()->route('admin.master-data.category.index');
+        Category::create($validatedData);
+
+        return redirect()
+            ->route('admin.category.index')
+            ->with('success', 'Category created successfully.');
     }
 
     /**
@@ -63,17 +67,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $category->update([
-            'name' => $request->name,
-            'image' => $request->image,
-        ]);
+        if ($request->hasFile('image')) {
+            if ($category->image) {
+                Storage::disk('public')->delete($category->image);
+            }
 
-        return redirect()->route('admin.master-data.category.index');
+            $validatedData['image'] = $request->file('image')
+                ->store('categories', 'public');
+        }
+
+        $category->update($validatedData);
+
+        return redirect()
+            ->route('admin.category.index');
     }
 
     /**
@@ -81,7 +92,14 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        if ($category->image) {
+            Storage::disk('public')->delete($category->image);
+        }
+
         $category->delete();
-        return redirect()->route('admin.master-data.category.index');
+
+        return redirect()
+            ->route('admin.master-data.category.index')
+            ->with('success', 'Category deleted successfully.');
     }
 }

@@ -12,7 +12,9 @@ class TerapistController extends Controller
      */
     public function index()
     {
-        //
+        $terapists = Terapist::latest()
+            ->paginate(10);
+        return view('admin.master-data.terapist.index', compact('terapists'));
     }
 
     /**
@@ -20,7 +22,7 @@ class TerapistController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.master-data.terapist.create');
     }
 
     /**
@@ -28,7 +30,9 @@ class TerapistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+        ]);
     }
 
     /**

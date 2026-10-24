@@ -13,13 +13,13 @@
         {{-- name --}}
         <div class="input-group col-span-2">
             <x-admin.label>Name</x-admin.label>
-            <x-input type="text" name="name" placeholder="Input Category Name" :value="old('name')"></x-input>
+            <x-admin.input type="text" name="name" placeholder="Input Category Name" :value="old('name')" />
         </div>
 
         {{-- image --}}
         <div class="input-group">
             <x-admin.label>Image</x-admin.label>
-            <x-input-image></x-input-image>
+            <x-admin.input-image />
         </div>
 
         <div class="container-btn">

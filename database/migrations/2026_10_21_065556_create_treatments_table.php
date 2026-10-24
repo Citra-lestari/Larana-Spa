@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('treatments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('image');
             $table->string('desc');
             $table->string('price');
             $table->date('duration');

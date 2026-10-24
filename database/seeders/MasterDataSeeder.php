@@ -12,7 +12,7 @@ class MasterDataSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Specialists
+        // Specialists
         $specialists = [
             ['name' => 'Senior Massage Therapist', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Aromatherapy Specialist', 'created_at' => now(), 'updated_at' => now()],
@@ -21,7 +21,7 @@ class MasterDataSeeder extends Seeder
         ];
         DB::table('specialists')->insert($specialists);
 
-        // 2. Categories
+        // Categories
         $categories = [
             [
                 'name' => 'Massage Therapy',
@@ -31,7 +31,7 @@ class MasterDataSeeder extends Seeder
             ],
             [
                 'name' => 'Facial and Skin Care',
-                'image' => 'asset/Facial & Skin Care.png',
+                'image' => 'asset/Facial Skin Care.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -43,63 +43,67 @@ class MasterDataSeeder extends Seeder
             ],
             [
                 'name' => 'Foot and Hand Care',
-                'image' => 'asset/Foot & Hand Care.png',
+                'image' => 'asset/Foot Hand Care.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
         ];
         DB::table('categories')->insert($categories);
 
-        // 3. Treatments
+        // Treatments
         $treatments = [
             [
                 'category_id' => 1,
-                'name' => 'Traditional Balinese Massage',
-                'desc' => 'Pijat tradisional khas Bali yang mengombinasikan teknik peregangan, acupressure, dan minyak aromaterapi murni untuk melancarkan sirkulasi energi dan meredakan ketegangan otot.',
-                'price' => 'Rp 275.000',
+                'image' => 'asset/Traditional Balinese.png',
+                'name' => 'Traditional Balinese ',
+                'desc' => 'A traditional full-body massage combining flowing movements, gentle stretching, and acupressure to ease tension and encourage deep relaxation.',
+                'price' => 'Rp 250.000',
                 'duration' => '2026-10-22',
-                'before_treatment' => 'Konsultasi kondisi kesehatan dan ritual cuci kaki dengan garam laut aromatik.',
-                'health_treatment' => 'Meredakan pegal linu, melancarkan aliran darah, dan mengurangi stres fisik.',
+                'before_treatment' => 'A little preparation can make your treatment even more enjoyable. Follow these simple tips to help you feel comfortable, relaxed, and ready for your wellness experience.',
+                'health_treatment' => 'Your comfort and well-being always come first. Let us know about any health conditions or concerns beforehand so we can help determine the most suitable treatment for you.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'category_id' => 1,
-                'name' => 'Warm Stone Relaxing Massage',
-                'desc' => 'Terapi menggunakan batu vulkanik hangat pilihan yang diletakkan pada titik-titik cakra tubuh untuk menyalurkan energi relaksasi hangat yang mendalam.',
+                'image' => 'asset/Warm Stone Therapy.png',
+                'name' => 'Warm Stone Therapy',
+                'desc' => 'A soothing massage using smooth, warmed stones and gentle movements to help relax tense muscles and create a comforting spa experience.',
                 'price' => 'Rp 350.000',
                 'duration' => '2026-10-22',
-                'before_treatment' => 'Pemeriksaan sensitivitas suhu kulit dan relaksasi pernapasan herbal.',
-                'health_treatment' => 'Menenangkan sistem saraf pusat, meredakan insomnia, dan mempercepat pemulihan otot.',
+                'before_treatment' => 'A little preparation can make your treatment even more enjoyable. Follow these simple tips to help you feel comfortable, relaxed, and ready for your wellness experience.',
+                'health_treatment' => 'Your comfort and well-being always come first. Let us know about any health conditions or concerns beforehand so we can help determine the most suitable treatment for you.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'category_id' => 2,
-                'name' => 'Organic Botanical Glow Facial',
-                'desc' => 'Perawatan wajah alami menggunakan ekstrak mawar, lidah buaya organik, dan vitamin serum untuk mencerahkan kulit serta mengembalikan elastisitas alami.',
+                'image' => 'asset/Rejuvenating Facial.png',
+                'name' => 'Rejuvenating Facial',
+                'desc' => 'A refreshing facial ritual featuring gentle cleansing, exfoliation, and a nourishing mask to leave your skin feeling clean, soft, and revitalized.',
                 'price' => 'Rp 300.000',
                 'duration' => '2026-10-22',
-                'before_treatment' => 'Analisis jenis kulit wajah dan pembersihan mendalam (double cleansing).',
-                'health_treatment' => 'Menghidrasi kulit kering, mengangkat sel kulit mati, dan memberi kilau sehat alami.',
+                'before_treatment' => 'A little preparation can make your treatment even more enjoyable. Follow these simple tips to help you feel comfortable, relaxed, and ready for your wellness experience.',
+                'health_treatment' => 'Your comfort and well-being always come first. Let us know about any health conditions or concerns beforehand so we can help determine the most suitable treatment for you.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'category_id' => 3,
-                'name' => 'Deep Foot Reflexology Therapy',
-                'desc' => 'Stimulasi titik refleksi pada telapak kaki yang terhubung dengan organ vital tubuh untuk meningkatkan vitalitas dan memulihkan stamina.',
+                'image' => 'asset/Relaxing Foot Reflexology.png',
+                'name' => 'Relaxing Foot Reflexology',
+                'desc' => 'A focused foot massage using gentle pressure techniques to ease tired feet and offer a comforting pause after a long day.',
                 'price' => 'Rp 180.000',
                 'duration' => '2026-10-22',
-                'before_treatment' => 'Rendam kaki herbal hangat dengan irisan lemon dan minyak sereh wangi.',
-                'health_treatment' => 'Menstimulasi fungsi metabolisme, meredakan kaki lelah, dan memperlancar detoksifikasi tubuh.',
+                'before_treatment' => 'A little preparation can make your treatment even more enjoyable. Follow these simple tips to help you feel comfortable, relaxed, and ready for your wellness experience.',
+                'health_treatment' => 'Your comfort and well-being always come first. Let us know about any health conditions or concerns beforehand so we can help determine the most suitable treatment for you.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
         ];
         DB::table('treatments')->insert($treatments);
 
-        // 4. Packages
+        // Packages
         $packages = [
             [
                 'name' => 'Serenity Escape Package',
@@ -134,7 +138,7 @@ class MasterDataSeeder extends Seeder
         ];
         DB::table('packages')->insert($packages);
 
-        // 5. Terapists
+        // Terapists
         $terapists = [
             [
                 'name' => 'Ni Wayan Sukmawati',
@@ -167,7 +171,7 @@ class MasterDataSeeder extends Seeder
         ];
         DB::table('terapists')->insert($terapists);
 
-        // 6. Blogs
+        // Blogs
         $blogs = [
             [
                 'title' => '5 Khasiat Aromaterapi Lavender untuk Mengatasi Stres dan Insomnia',
@@ -193,7 +197,7 @@ class MasterDataSeeder extends Seeder
         ];
         DB::table('blogs')->insert($blogs);
 
-        // 7. FAQs
+        // FAQs
         $faqs = [
             [
                 'question' => 'Apakah saya harus melakukan reservasi terlebih dahulu sebelum datang?',
@@ -222,7 +226,7 @@ class MasterDataSeeder extends Seeder
         ];
         DB::table('faqs')->insert($faqs);
 
-        // 8. Privacy Policy
+        // Privacy Policy
         $privacyPolicy = [
             'desc' => 'Kebijakan Privasi Larana Spa berkomitmen menjaga kerahasiaan seluruh data pribadi pelanggan, termasuk nama, nomor telepon, alamat email, dan informasi riwayat kesehatan yang diberikan saat reservasi. Kami tidak membagikan atau menjual data Anda kepada pihak ketiga mana pun tanpa persetujuan tertulis. Seluruh data hanya dipergunakan untuk keperluan konfirmasi reservasi, personalisasi layanan, dan peningkatan kualitas kenyamanan Anda di sanctuary kami.',
             'created_at' => now(),
@@ -230,7 +234,7 @@ class MasterDataSeeder extends Seeder
         ];
         DB::table('privacy_policies')->insert($privacyPolicy);
 
-        // 9. Terms and Conditions
+        // Terms and Conditions
         $termsAndConditions = [
             'desc' => 'Syarat dan Ketentuan Layanan Larana Spa: 1. Pelanggan diharapkan hadir tepat waktu sesuai jadwal reservasi. Keterlambatan lebih dari 15 menit dapat mengurangi durasi perawatan demi menghormati jadwal pelanggan berikutnya. 2. Pembatalan atau penundaan jadwal reservasi harap dikonfirmasikan paling lambat 4 jam sebelum sesi dimulai. 3. Tamu wajib menjaga ketenangan di seluruh area spa demi kenyamanan bersama. 4. Larana Spa tidak bertanggung jawab atas kehilangan barang berharga pribadi yang tidak disimpan di loker penyimpanan aman yang telah disediakan.',
             'created_at' => now(),
