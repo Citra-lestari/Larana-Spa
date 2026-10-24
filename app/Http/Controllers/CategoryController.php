@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::paginate(10);
+        return view('admin.master-data.category.index', compact('categories'));
     }
 
     /**
@@ -20,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.master-data.category.create');
     }
 
     /**
@@ -28,7 +29,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $category = Category::create([
+            'name' => $request->name,
+            'image' => $request->image,
+        ]);
+
+        return redirect()->route('admin.master-data.category.index');
     }
 
     /**
@@ -36,7 +47,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('admin.master-data.category.view', compact('category'));
     }
 
     /**
@@ -44,7 +55,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.master-data.category.update', compact('category'));
     }
 
     /**
@@ -52,7 +63,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+            'image' => $request->image,
+        ]);
+
+        return redirect()->route('admin.master-data.category.index');
     }
 
     /**
@@ -60,6 +81,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('admin.master-data.category.index');
     }
 }

@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailPageAllTerapistSectionHero extends Model
 {
-    //
+    protected $guarded = [
+        'id',
+    ];
 }

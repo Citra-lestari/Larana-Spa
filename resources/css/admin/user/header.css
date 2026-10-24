@@ -1,0 +1,80 @@
+
+body {
+    @apply font-poppins text-xs md:text-sm lg:text-[15px] 2xl:text-lg bg-white;
+}
+
+.logo {
+    @apply h-12 lg:h-20;
+}
+
+.logo img {
+    @apply w-full h-full object-cover;
+}
+
+.btn {
+    @apply py-2.5 px-5 rounded;
+}
+
+.btn-primary {
+    @apply bg-primary text-white text-center;
+}
+
+header {
+    @apply bg-white sticky top-0 z-50;
+}
+
+.wrapper-header {
+    @apply flex flex-row justify-between items-center px-7 py-3 md:px-10 lg:px-20 2xl:px-15 2xl:max-w-360 2xl:mx-auto;
+}
+
+#btnMenu {
+    @apply text-primary md:hidden;
+}
+
+.btn-secondary {
+    @apply text-center py-2 px-5 text-primary border border-primary rounded transition-all duration-300 hover:bg-primary/10;
+}
+
+.btn-primary {
+    @apply py-2 px-5 text-white bg-primary rounded transition-all duration-300 hover:bg-primary/90;
+}
+
+.container-btn {
+    @apply flex flex-row gap-2;
+}
+
+.nav {
+    @apply pl-7 pr-10 fixed top-14.75 left-0 duration-300 transition-transform ease-in-out -translate-x-full h-screen bg-white md:h-auto md:px-0 md:static md:pl-0 md:pr-0 md:w-auto md:translate-x-0;
+}
+
+.nav.active {
+    @apply translate-x-0;
+}
+
+.wrapper-nav {
+    @apply absolute md:static h-dvh md:h-auto;
+}
+
+.wrapper-nav ul li .btn-primary {
+    @apply block md:hidden;
+}
+
+.wrapper-nav ul {
+    @apply flex flex-col gap-5 py-5 md:py-0 md:flex-row md:gap-3 lg:gap-8;
+}
+
+.wrapper-nav ul li {
+    @apply duration-300 transition-all hover:text-primary;
+}
+
+.wrapper-header .btn-primary {
+    @apply hidden md:block;
+}
+
+.container-btn-header {
+    @apply flex flex-row gap-3 md:gap-5 items-center;
+}
+
+.icon-btn-header {
+    @apply text-xl md:text-[28px] lg:text-[32px]
+}

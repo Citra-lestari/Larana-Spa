@@ -1,0 +1,171 @@
+body {
+    @apply font-poppins text-xs md:text-sm lg:text-[15px] 2xl:text-lg bg-white;
+}
+
+::webkit-scrollbar {
+    @apply w-0 h-0;
+}
+
+
+/* CATEGORY */
+.category-item {
+    @apply flex flex-col gap-3 min-w-[70%] md:min-w-[33%] lg:min-w-[24%] w-[70%] md:w-[33%] lg:w-[24%];
+}
+
+.category-item img {
+    @apply w-full h-50 md:h-60 lg:h-72.5 object-cover rounded-t-full rounded-b-sm;
+}
+
+.category-desc {
+    @apply flex flex-col gap-0.5;
+}
+
+.title-category {
+    @apply duration-300 transition-all group-hover:text-primary font-medium text-sm md:text-base lg:text-lg 2xl:text-xl line-clamp-1 md:line-clamp-1 lg:line-clamp-1;
+}
+
+.category-desc p {
+    @apply text-[10px] md:text-sm lg:text-[13px] 2xl:text-base line-clamp-2;
+}
+
+
+/* TESTIMONIAL-HOMEPAGE */
+.testimonial-hp-item {
+    @apply p-5 rounded-xl rounded-tl-none border border-primary/30 duration-300 transition-all hover:border-primary min-w-[70%] md:min-w-[33%] lg:min-w-auto;
+}
+
+.testimonial-hp-item img {
+    @apply w-10 h-10 object-cover rounded-full;
+}
+
+.container-profile-testi {
+    @apply flex flex-row items-center gap-2.5 text-grey font-bold;
+}
+
+.profile-user-testi {
+    @apply flex flex-col gap-0.5 text-black text-[10px] md:text-xs 2xl:text-sm;
+}
+
+.profile-user-testi p:nth-child(1) {
+    @apply font-medium text-xs lg:text-sm 2xl:text-[17px];
+}
+
+.desc-testi {
+    @apply text-grey font-bold mt-4 mb-2 text-xs md:text-sm 2xl:text-base leading-normal line-clamp-3;
+}
+
+
+/* FAQ */
+.accordion-item {
+    @apply self-start h-fit px-6 py-4 border border-transparent duration-300 transition-all open:border-primary rounded-lg text-[10px] md:text-xs lg:text-sm 2xl:text-base cursor-pointer;
+}
+
+.accordion-header {
+    @apply flex flex-row items-center justify-between font-medium text-[13px] md:text-[15px] lg:text-base 2xl:text-lg;
+}
+
+.icon-accordion {
+    @apply text-primary duration-300 transition-all group-open:rotate-45;
+}
+
+.answer {
+    @apply mt-1 text-grey font-bold leading-normal text-xs md:text-sm lg:text-[15px] 2xl:text-base;
+}
+
+
+/* PRODUCT DESC */
+.product-item {
+    @apply cursor-pointer min-w-[60%] md:min-w-[33%] lg:w-auto h-fit flex flex-col gap-0.5 md:gap-3 p-2 md:p-4 rounded border border-grey/15 bg-white duration-300 transition-all hover:border-primary;
+}
+
+.product-campaign-item {
+    @apply cursor-pointer h-fit flex flex-col gap-3 p-2 md:p-4 rounded border border-grey/15 bg-white duration-300 transition-all hover:border-primary;
+}
+
+.product-item img, .product-campaign-item img {
+    @apply w-full h-30 md:h-40 lg:w-full lg:h-56.25 object-cover rounded-sm;
+}
+
+.product-desc {
+    @apply flex flex-col items-start gap-0.5;
+}
+
+.title-product {
+    @apply duration-300 transition-all group-hover:text-primary font-medium text-sm md:text-base 2xl:text-xl line-clamp-1 md:line-clamp-1 lg:line-clamp-1;
+}
+
+.product-desc p {
+    @apply line-clamp-2  text-[10px] md:text-sm lg:text-[13px] 2xl:text-base;
+}
+
+.date-campaign {
+    @apply flex flex-row gap-2 items-center text-grey font-bold text-[10px] md:text-xs 2xl:text-sm;
+}
+
+.date-campaign-text {
+    @apply flex flex-col gap-0.5 md:flex-row md:gap-1 md:min-w-full md:overflow-x-auto;
+}
+
+.price-slot {
+    @apply flex flex-row items-center justify-between my-1;
+}
+
+.price-slot p:first-child {
+    @apply text-primary font-medium text-sm md:text-base 2xl:text-xl;
+}
+
+.price-slot p:last-child {
+    @apply text-grey font-bold;
+}
+
+
+/* STEPS */
+.steps-item {
+    @apply p-5 rounded-lg border border-primary/30 duration-300 transition-all text-grey font-bold hover:border-primary min-w-[70%] md:min-w-[33%] lg:min-w-auto;
+}
+
+.steps-header {
+    @apply flex flex-row items-center gap-1 lg:gap-2
+}
+
+.icon-steps {
+    @apply w-9 h-9 rounded-sm flex flex-row justify-center items-center bg-primary/5;
+}
+
+.number-steps {
+    @apply font-medium text-primary text-[8px] md:text-[10px] lg:text-xs;
+}
+
+.desc-steps {
+    @apply mt-2 lg:mt-3 text-xs md:text-[13px] lg:text-[13px] 2xl:text-base line-clamp-3 opacity-70;
+}
+
+.title-steps {
+    @apply text-sm md:text-[15px] lg:text-base 2xl:text-lg font-semibold group-hover:text-primary duration-300 transition-all;
+}
+
+
+/* CHOOSE US */
+.choose-item {
+    @apply flex gap-3 p-3 md:p-5 rounded-lg border border-primary/30 duration-300 transition-all text-grey font-bold hover:border-primary min-w-[70%] md:min-w-[33%] lg:min-w-auto;
+}
+
+.icon-choose {
+    @apply w-10 h-9.5 rounded bg-primary/10 flex justify-center items-center group-hover:bg-primary transition-all duration-300;
+}
+
+.icon-choose .iconify {
+    @apply text-primary group-hover:text-white transition-all duration-300;
+}
+
+.desc-choose {
+    @apply text-[10px] md:text-xs lg:text-[13px] 2xl:text-base line-clamp-2 opacity-70;
+}
+
+.title-choose {
+    @apply mb-0.5 font-medium group-hover:text-primary duration-300 transition-all;
+}
+
+.btn-campaign {
+    @apply text-xs md:text-sm lg:text-[15px] 2xl:text-lg py-2 px-2.5 rounded-sm border border-primary text-primary text-center group-hover:bg-primary group-hover:text-white transition-colors duration-300;
+}

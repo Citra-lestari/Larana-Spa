@@ -22,6 +22,17 @@
 @import "./customer/about-us.css";
 @import "./customer/detail-blog.css";
 
+@import "./admin/user/card-component.css";
+@import "./admin/user/footer.css";
+@import "./admin/user/header-profile.css";
+@import "./admin/user/header.css";
+@import "./admin/user/profile-layout.css";
+@import "./admin/user/profile-sidebar.css";
+@import "./admin/user/title-section.css";
+@import "./admin/user/user-layout.css";
+@import "./admin/crud.css";
+@import "./admin/sidebar.css";
+
 @source "../views/**/*.blade.php";
 @source "../js/**/*.js";
 
@@ -92,7 +103,7 @@ section{
 }
 
 .nav-all{
-    @apply text-black/50 font-medium text-base md:text-sm lg:text-title-body hover:transition-all hover:text-primary hover:duration-500;
+    @apply text-black/50 font-medium text-base md:text-sm lg:text-body hover:transition-all hover:text-primary hover:duration-500;
 }
 
 /* nampilin 8 card di detail page */
@@ -102,21 +113,4 @@ section{
 
 .all-card3{
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-5;
-}
-
-/* pagination */
-.container-pagination button {
-    @apply text-body w-7 h-7 rounded-sm flex flex-row items-center justify-center text-black/50 duration-300 transition-all hover:bg-black hover:text-white cursor-pointer;
-}
-
-.container-pagination button .iconify {
-    @apply text-black/50 duration-300 transition-all hover:bg-black hover:text-white cursor-pointer;
-}
-
-.container-pagination button.pagination-active {
-    @apply bg-black text-white cursor-pointer;
-}
-
-.container-pagination {
-    @apply flex flex-row gap-1 items-end justify-end;
 }

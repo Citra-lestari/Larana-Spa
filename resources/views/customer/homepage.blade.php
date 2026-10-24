@@ -3,7 +3,7 @@
     <x-section.homepage.hero-section />
     
     {{-- category --}}
-    <x-section.homepage.category />
+    <x-section.homepage.category :categories="$categories" />
 
     {{-- packages --}}
     <x-section.homepage.packages />

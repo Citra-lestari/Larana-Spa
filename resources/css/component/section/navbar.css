@@ -1,3 +1,7 @@
 .nav ul li a {
     @apply block py-2 text-black/50 hover:text-primary text-title-body font-medium md:py-0;
 }
+
+.padding {
+    @apply px-[5%] md:px-[7.5%];
+}

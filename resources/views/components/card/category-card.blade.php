@@ -1,7 +1,7 @@
-@props(['Name'])
+@props(['Name', 'Image'])
 
 <div class="category-card">
-    <img src="{{ asset('asset/category.jpg') }}" alt="Category" class="category-image">
+    <img src="{{ asset($Image) }}" alt="{{ $Name }}" class="category-image">
     <div class="category-overlay"></div>
     <h3 class="category-name">
         {{ $Name }}

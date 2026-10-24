@@ -1,0 +1,12 @@
+
+body {
+    @apply font-poppins text-xs md:text-sm lg:text-[15px] 2xl:text-lg bg-white;
+}
+
+main {
+    @apply flex flex-col gap-20 md:gap-28 lg:gap-36 mb-20 md:mb-28 lg:mb-36 mx-7 md:mx-10 lg:mx-20 2xl:px-15 mt-10 2xl:max-w-360 2xl:mx-auto;
+}
+
+.wrapper-detail-page {
+    @apply flex flex-col gap-20 md:gap-28 lg:gap-36 lg:mx-25
+}

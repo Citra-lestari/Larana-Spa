@@ -18,12 +18,24 @@
     @apply text-card-title font-semibold;
 }
 
-.location-detail .time-operational{
+.location-detail{
     @apply text-body text-black/70;
 }
 
 .location-line{
     @apply w-full h-0.5 text-black/20;
+}
+
+.day-operational{
+    @apply flex flex-col gap-1;
+}
+
+.operational-title{
+    @apply text-small font-semibold uppercase tracking-wider;
+}
+
+.time-operational{
+    @apply text-body text-black/70;
 }
 
 .operational{

@@ -1,0 +1,60 @@
+
+body {
+    @apply font-poppins text-xs md:text-sm lg:text-[15px] 2xl:text-lg;
+}
+
+footer {
+    @apply relative z-20 bg-black text-white font-normal;
+}
+
+.container-footer {
+    @apply py-10 md:py-5 px-7 md:px-10 lg:px-20 2xl:px-15 2xl:max-w-360 2xl:mx-auto;
+}
+
+.wrapper-footer {
+    @apply flex flex-col md:flex-row md:justify-between gap-5 mb-10;
+}
+
+.wrapper-footer img {
+    @apply h-7 w-fit md:h-auto;
+}
+
+.copyright {
+    @apply flex flex-row items-start justify-between text-xs md:text-xs lg:text-sm 2xl:text-base;
+}
+
+.about-footer {
+    @apply md:w-[30%] lg:w-[25%] flex flex-col gap-3 text-xs md:text-xs lg:text-sm 2xl:text-base;
+}
+
+.about-footer img {
+    @apply w-20 h-20 object-cover;
+}
+
+.menu-footer {
+    @apply md:w-fit lg:w-[15%] flex flex-col gap-2 font-semibold;
+}
+
+.menu-footer2 {
+    @apply md:w-[17%] lg:w-[15%] flex flex-col gap-2 font-semibold;
+}
+
+.menu-footer2 ul, .menu-footer ul {
+    @apply font-normal flex flex-col gap-1 text-xs md:text-xs lg:text-sm 2xl:text-base;
+}
+
+.menu-footer2 ul li, .menu-footer ul li {
+    @apply duration-500 transition-all text-white hover:text-white/80;
+}
+
+.social-btn-footer {
+    @apply flex flex-row gap-1 items-center;
+}
+
+.social-btn-footer .iconify {
+    @apply duration-500 transition-all text-white hover:text-white/80;
+}
+
+.social-btn-footer button {
+    @apply text-white duration-500 transition-all hover:text-white/80 cursor-pointer;
+}

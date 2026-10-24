@@ -1,0 +1,16 @@
+
+body {
+    @apply font-poppins text-xs md:text-sm 2xl:text-base text-black;
+}
+
+.topbar {
+    @apply h-fit flex flex-row justify-between items-center bg-white py-3.5 px-7 md:px-8 2xl:px-40;
+}
+
+#BtnMenu {
+    @apply lg:hidden
+}
+
+.topbar h3 {
+    @apply font-medium text-base md:text-lg
+}

@@ -13,7 +13,7 @@
             aria-expanded="false"
             aria-controls="faq-body-{{ $Id }}"
         >
-            <span class="text-base md:text-card-title font-normal leading-snug text-black hover:text-primary">
+            <span class="text-base md:text-title-body font-normal leading-snug text-black hover:text-primary">
                 {{ $Question }}
             </span>
 

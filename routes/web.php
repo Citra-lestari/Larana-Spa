@@ -1,11 +1,47 @@
 
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\Category;
 
-Route::get('/', function () {
-    return view('customer.homepage');
-})->name('customer.home');
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SpecialistController;
+use App\Http\Controllers\CustomerController;
+
+
+Route::get('/', [CustomerController::class, 'index'])
+    ->name('customer.home');
+
+// ADMIN
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Login
+    Route::get('login', [AdminAuthController::class, 'showLogin'])->name('login');
+    Route::post('login', [AdminAuthController::class, 'login']);
+
+    // Dashboard
+    Route::get('dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    // Logout
+    Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
+
+    Route::resource('category', CategoryController::class);
+    Route::resource('specialist', SpecialistController::class);
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/all-treatment', function () {
     return view('customer.all-treatment');
@@ -46,3 +82,5 @@ Route::get('/about-us', function () {
 Route::get('/detail-blog', function () {
     return view('customer.detail-blog');
 })->name('customer.detail-blog');
+
+

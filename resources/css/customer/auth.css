@@ -1,0 +1,69 @@
+﻿@import "tailwindcss";
+
+@theme {
+    --font-poppins: "Poppins", sans-serif;
+    --color-primary: #8B6B4A;
+    --color-white: #FFF9F3;
+    --color-grey: #D9D9D9;
+    --color-black: #121212;
+}
+
+body {
+    @apply font-poppins bg-white min-h-screen flex items-center justify-center;
+}
+
+.container-auth {
+    @apply w-full max-w-md mx-auto bg-white rounded-2xl shadow-md px-8 py-10 flex flex-col items-center gap-5;
+}
+
+.container-auth img {
+    @apply h-12 w-auto object-contain mb-2;
+}
+
+.container-auth h2 {
+    @apply text-2xl font-semibold text-black;
+}
+
+.form-auth {
+    @apply w-full flex flex-col gap-5 mt-2;
+}
+
+.wrapper-all-inputan {
+    @apply flex flex-col gap-4;
+}
+
+.per-inputan {
+    @apply flex flex-col gap-1.5;
+}
+
+.text-label-inputan {
+    @apply text-sm font-medium text-black/70;
+}
+
+.inputan {
+    @apply w-full px-4 py-3 rounded-lg border border-grey/50 bg-grey/10 text-sm outline-none;
+}
+
+.inputan-checkbox {
+    @apply w-4 h-4 cursor-pointer;
+}
+
+.wrapper-remember-and-forget-pass {
+    @apply flex items-center justify-between text-sm;
+}
+
+.wrapper-remember-me {
+    @apply flex items-center gap-2;
+}
+
+.text-remember-me {
+    @apply text-sm text-black/70;
+}
+
+.text-forget-password {
+    @apply text-sm text-primary hover:underline;
+}
+
+.form-auth button[type="submit"] {
+    @apply w-full py-3 bg-primary text-white rounded-lg font-medium text-sm cursor-pointer;
+}

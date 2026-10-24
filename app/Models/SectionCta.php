@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SectionCta extends Model
 {
-    //
+    protected $guarded = [
+        'id',
+    ];
 }

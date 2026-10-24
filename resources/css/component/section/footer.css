@@ -10,6 +10,14 @@ footer{
     @apply flex flex-col lg:flex-row justify-between mx-auto max-w-[90%] md:max-w-[85%] 2xl:max-w-[1400px] pt-[72px] pb-[64px];
 }
 
+.footer-1{
+    @apply flex flex-col;
+}
+
+.nav-1{
+    @apply flex flex-col;
+}
+
 .img-footer{
     @apply w-30 h-16;
 }

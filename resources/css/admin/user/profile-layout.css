@@ -1,0 +1,8 @@
+
+body {
+    @apply font-poppins text-xs md:text-sm 2xl:text-base text-black bg-grey/20;
+}
+
+.wrapper-dashboard {
+    @apply py-2 my-10 md:py-0 px-7 2xl:px-15 2xl:max-w-360 2xl:mx-auto lg:mx-auto flex flex-col gap-5 lg:gap-8 md:flex-row md:justify-center lg:w-[80%] lg:bg-white rounded-md p-5 lg:px-10 lg:py-12;
+}

@@ -14,10 +14,14 @@
     @apply h-11 w-11 rounded-full object-cover;
 }
 
+.testimoni-name-date{
+    @apply flex flex-col;
+}
+
 .testimoni-name{
     @apply text-small font-medium;
 }
 
-.testimonial-date{
+.testimoni-date{
     @apply text-metadata text-black/50;
 }

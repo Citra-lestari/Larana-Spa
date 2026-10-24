@@ -7,30 +7,14 @@
     <div>
         <div class="swiper fourCardSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <x-card.category-card
-                        Name="Massage Therapy"
-                    />
-                </div>
-
-                <div class="swiper-slide">
-                    <x-card.category-card
-                        Name="Facial & Skin Care"
-                    />
-                </div>
-
-                <div class="swiper-slide">
-                    <x-card.category-card
-                        Name="Body Treatments"
-                    />
-                </div>
-
-                <div class="swiper-slide">
-                    <x-card.category-card
-                        Name="Foot & Hand Care"
-                    />
-                </div>
-
+                @foreach ($categories as $category)
+                    <div class="swiper-slide">
+                        <x-card.category-card
+                            :Name="$category->name"
+                            :Image="$category->image"
+                        />
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

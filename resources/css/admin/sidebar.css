@@ -1,0 +1,186 @@
+﻿/* ================================================
+   ADMIN LAYOUT  —  sidebar.css
+   Struktur:
+   body                             (overflow:hidden, full-screen)
+   ├── .admin-sidebar               (fixed, left, full-height)
+   │     └── .sidebar-inner        (flex-col, h-full)
+   ├── #sidebar-overlay             (mobile backdrop)
+   └── .admin-main-wrapper          (margin-left = sidebar width)
+         ├── .admin-topbar          (sticky top-0)
+         └── .admin-content         (scrollable content)
+================================================ */
+
+/* ---------- reset ringan ---------- */
+::-webkit-scrollbar { @apply w-1; }
+::-webkit-scrollbar-thumb { @apply bg-grey/40 rounded-full; }
+
+/* ---------- body ---------- */
+.admin-body {
+    @apply font-poppins text-sm text-black bg-[#F5F5F5] min-h-screen;
+}
+
+/* ================================================
+   SIDEBAR
+================================================ */
+.admin-sidebar {
+    /* fixed, full-height, width 14rem (224px) */
+    @apply fixed top-0 left-0 h-screen w-56 z-50
+           bg-white border-r border-grey/20
+           flex flex-col overflow-y-auto
+           -translate-x-full lg:translate-x-0
+           transition-transform duration-300;
+}
+
+/* mobile: tampil saat .open */
+.admin-sidebar.open {
+    @apply translate-x-0;
+}
+
+/* overlay mobile */
+.admin-overlay {
+    @apply fixed inset-0 z-40 bg-black/40 hidden lg:hidden;
+}
+.admin-overlay.show {
+    @apply block;
+}
+
+/* ---------- konten dalam sidebar ---------- */
+.sidebar-inner {
+    @apply flex flex-col h-full px-4 py-6 gap-4;
+}
+
+/* logo area */
+.sidebar-logo-wrap {
+    @apply flex items-center justify-between mb-2 px-1;
+}
+.sidebar-logo {
+    @apply h-16 w-auto object-contain;
+}
+.sidebar-logo-text {
+    @apply text-lg font-bold text-primary;
+}
+.sidebar-close-btn {
+    @apply p-1 rounded-lg text-black/40 hover:text-primary hover:bg-primary/10 border-none bg-transparent cursor-pointer;
+}
+
+/* nav list */
+.sidebar-nav {
+    @apply flex-1 overflow-y-auto;
+}
+.sidebar-nav-list {
+    @apply flex flex-col gap-0.5 list-none p-0 m-0;
+}
+
+/* link biasa */
+.sidebar-link {
+    @apply flex items-center gap-3 w-full
+           px-3 py-2 rounded-lg
+           text-sm text-black/50 font-medium no-underline
+           hover:bg-primary/10 hover:text-primary
+           transition-all duration-200 cursor-pointer border-none bg-transparent;
+}
+.sidebar-link.active {
+    @apply bg-primary/10 text-primary;
+}
+
+/* parent (details > summary) */
+details > summary {
+    list-style: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.sidebar-parent {
+    @apply justify-between;
+}
+
+.sidebar-arrow {
+    @apply text-black/30 transition-transform duration-200;
+}
+details[open] .sidebar-arrow {
+    @apply rotate-90;
+}
+
+/* children */
+.sidebar-children {
+    @apply flex flex-col gap-0.5 mt-1 ml-3 pl-3 border-l border-grey/20 list-none p-0;
+}
+.sidebar-child-link {
+    @apply block px-3 py-1.5 rounded-md text-xs text-black/40 no-underline
+           hover:text-primary hover:bg-primary/5
+           transition-all duration-200;
+}
+.sidebar-child-link.active {
+    @apply text-primary font-medium;
+}
+
+/* logout */
+.sidebar-logout-wrap {
+    @apply border-t border-grey/20 pt-3 mt-2;
+}
+.sidebar-logout-btn {
+    @apply hover:bg-red-50 hover:text-red-500;
+}
+
+/* ================================================
+   MAIN WRAPPER
+================================================ */
+.admin-main-wrapper {
+    /* geser sejauh lebar sidebar di desktop */
+    @apply lg:ml-56 flex flex-col min-h-screen;
+}
+
+/* ================================================
+   TOPBAR  —  sticky, tidak bergerak
+================================================ */
+.admin-topbar {
+    @apply sticky top-0 z-30
+           flex items-center justify-between gap-4
+           bg-white border-b border-grey/20
+           px-6 py-3;
+}
+.admin-topbar-left {
+    @apply flex items-center gap-3;
+}
+.admin-welcome {
+    @apply text-xs text-black/50 leading-none;
+}
+.admin-spa-name {
+    @apply text-base font-semibold text-black leading-snug;
+}
+.admin-hamburger {
+    @apply lg:hidden p-1.5 rounded-lg text-black/50 hover:text-primary hover:bg-primary/10
+           border-none bg-transparent cursor-pointer;
+}
+.admin-topbar-right {
+    @apply flex items-center gap-3;
+}
+.admin-btn-search {
+    @apply w-8 h-8 rounded-lg bg-[#F5F5F5] border border-grey/30
+           flex items-center justify-center
+           text-black/50 hover:text-primary hover:border-primary
+           transition-all duration-200 cursor-pointer;
+}
+.admin-avatar {
+    @apply w-9 h-9 rounded-full object-cover border border-grey/30;
+}
+.admin-profile {
+    @apply flex items-center gap-2 cursor-pointer;
+}
+.admin-profile-info {
+    @apply hidden md:flex flex-col;
+}
+.admin-profile-name {
+    @apply text-sm font-semibold text-black leading-tight;
+}
+.admin-profile-role {
+    @apply text-xs text-black/50 leading-tight;
+}
+
+/* ================================================
+   CONTENT AREA
+================================================ */
+.admin-content {
+    @apply flex-1 p-6;
+}
