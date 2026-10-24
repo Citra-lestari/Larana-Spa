@@ -12,7 +12,7 @@
         <x-admin.error-line></x-admin.error-line>
 
         {{-- name --}}
-        <div class="input-group col-span-2">
+        <div class="input-group">
             <x-admin.label>Name</x-admin.label>
             <x-admin.input type="text" name="name" placeholder="Input Category" value="{{ old('name', $category->name) }}"></x-admin.input>
         </div>

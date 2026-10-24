@@ -8,7 +8,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\TerapistController;
 
 Route::get('/', [CustomerController::class, 'index'])
     ->name('customer.home');
@@ -29,6 +29,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('category', CategoryController::class);
     Route::resource('specialist', SpecialistController::class);
+    Route::resource('terapist',TerapistController::class);
 });
 
 

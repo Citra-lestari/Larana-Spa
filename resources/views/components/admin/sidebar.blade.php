@@ -25,8 +25,8 @@
 
             {{-- Master Data --}}
             <li>
-                <details {{ request()->routeIs('admin.category.*') || request()->routeIs('admin.specialist.*') ? 'open' : '' }}>
-                    <summary class="sidebar-link sidebar-parent {{ request()->routeIs('admin.category.*') || request()->routeIs('admin.specialist.*') ? 'active' : '' }}">
+                <details {{ request()->routeIs('admin.category.*') || request()->routeIs('admin.specialist.*') || request()->routeIs('admin.terapist.*') ? 'open' : '' }}>
+                    <summary class="sidebar-link sidebar-parent {{ request()->routeIs('admin.category.*') || request()->routeIs('admin.specialist.*') || request()->routeIs('admin.terapist.*') ? 'active' : '' }}">
                         <span class="flex items-center gap-3">
                             <iconify-icon icon="bi:folder" width="20"></iconify-icon>
                             <span>Master Data</span>
@@ -36,14 +36,20 @@
                     <ul class="sidebar-children">
                         <li>
                             <a href="{{ route('admin.category.index') }}"
-                               class="sidebar-child-link {{ request()->routeIs('admin.category.*') ? 'active' : '' }}">
+                                class="sidebar-child-link {{ request()->routeIs('admin.category.*') ? 'active' : '' }}">
                                 Category
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('admin.specialist.index') }}"
-                               class="sidebar-child-link {{ request()->routeIs('admin.specialist.*') ? 'active' : '' }}">
+                                class="sidebar-child-link {{ request()->routeIs('admin.specialist.*') ? 'active' : '' }}">
                                 Specialist
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.terapist.index') }}"
+                                class="sidebar-child-link {{ request()->routeIs('admin.terapist.*') ? 'active' : '' }}">
+                                Terapist
                             </a>
                         </li>
                     </ul>

@@ -5,7 +5,7 @@
     </span>
 
     <div class="container-form">
-        <div class="input-group col-span-2">
+        <div class="input-group">
             <x-admin.label>Category</x-admin.label>
             <x-admin.input
                 type="text"

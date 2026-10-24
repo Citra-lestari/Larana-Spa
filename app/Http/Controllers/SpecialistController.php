@@ -12,7 +12,9 @@ class SpecialistController extends Controller
      */
     public function index()
     {
-        //
+        $specialists = Specialist::latest()
+            ->paginate(10);
+        return view('admin.master-data.specialist.index', compact('specialists'));
     }
 
     /**
@@ -20,7 +22,7 @@ class SpecialistController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.master-data.specialist.create');
     }
 
     /**
@@ -28,7 +30,15 @@ class SpecialistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        Specialist::create($validatedData);
+        return redirect()
+            ->route('admin.specialist.index')
+            ->with('succes', 'Specialist created successfully');
+
     }
 
     /**
@@ -36,7 +46,7 @@ class SpecialistController extends Controller
      */
     public function show(Specialist $specialist)
     {
-        //
+        return view('admin.master-data.specialist.view', compact('specialist'));
     }
 
     /**
@@ -44,7 +54,7 @@ class SpecialistController extends Controller
      */
     public function edit(Specialist $specialist)
     {
-        //
+        return view('admin.master-data.specialist.update', compact('specialist'));
     }
 
     /**
@@ -52,7 +62,14 @@ class SpecialistController extends Controller
      */
     public function update(Request $request, Specialist $specialist)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255|unique:specialists,name,' . $specialist->id, //ini biar pas di edit namenya itu ga duplicate. misal kita mau ubah jadi a, padahal a udh ada
+        ]);
+
+        $specialist->update($validatedData);
+        return redirect()
+            ->route('admin.specialist.index')
+            ->with('succes', 'Specialist created successfully');
     }
 
     /**
@@ -60,6 +77,10 @@ class SpecialistController extends Controller
      */
     public function destroy(Specialist $specialist)
     {
-        //
+        $specialist->delete();
+
+        return redirect()
+            ->route('admin.specialist.index')
+            ->with('success', 'Specialist deleted successfully');
     }
 }

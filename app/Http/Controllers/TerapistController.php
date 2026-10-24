@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Specialist;
 use App\Models\Terapist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TerapistController extends Controller
 {
@@ -22,7 +24,8 @@ class TerapistController extends Controller
      */
     public function create()
     {
-        return view('admin.master-data.terapist.create');
+        $specialists = Specialist::all();
+        return view('admin.master-data.terapist.create', compact('specialists'));
     }
 
     /**
@@ -30,9 +33,20 @@ class TerapistController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-
+        $validatedData = $request->validate([
+            'name'          => 'required|string|max:255',
+            'specialist_id' => 'required|exists:specialists,id',
+            'image'         => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        $validatedData['image'] = $request->file('image')
+            ->store('categories', 'public');
+
+        Terapist::create($validatedData);
+
+        return redirect()
+            ->route('admin.terapist.index')
+            ->with('success', 'Terapist created successfully.');
     }
 
     /**
@@ -40,7 +54,7 @@ class TerapistController extends Controller
      */
     public function show(Terapist $terapist)
     {
-        //
+        return view('admin.master-data.terapist.view', compact('terapist'));
     }
 
     /**
@@ -48,7 +62,8 @@ class TerapistController extends Controller
      */
     public function edit(Terapist $terapist)
     {
-        //
+        $specialists = Specialist::all();
+        return view('admin.master-data.terapist.update',compact('terapist', 'specialists'));
     }
 
     /**
@@ -56,7 +71,25 @@ class TerapistController extends Controller
      */
     public function update(Request $request, Terapist $terapist)
     {
-        //
+        $validatedData = $request->validate([
+            'name'          => 'required|string|max:255',
+            'specialist_id' => 'required|exists:specialists,id',
+            'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($terapist->image) {
+                Storage::disk('public')->delete($terapist->image);
+            }
+
+            $validatedData['image'] = $request->file('image')
+                ->store('terapists', 'public');
+        }
+
+        $terapist->update($validatedData);
+
+        return redirect()
+            ->route('admin.terapist.index');
     }
 
     /**
@@ -64,6 +97,14 @@ class TerapistController extends Controller
      */
     public function destroy(Terapist $terapist)
     {
-        //
+        if ($terapist->image) {
+            Storage::disk('public')->delete($terapist->image);
+        }
+
+        $terapist->delete();
+
+        return redirect()
+            ->route('admin.master-data.terapist.index')
+            ->with('success', 'Terapist deleted successfully.');
     }
 }
